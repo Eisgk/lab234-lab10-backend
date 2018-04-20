@@ -9,7 +9,7 @@ before_install:
 install:
 - mvn install -Dmaven.javadoc.skip=true -B -V
 - ls -l
-- docker build --build-arg JAR_FILE=/target/backend.jar -t $DOCKERUSERNAME/se234-lab10-backend .
+- docker build --build-arg JAR_FILE=/target/backend.
 - docker push Eisgk/se234-lab10-backend
 - docker pull Eisgk/se234-lab10-client
 script:
