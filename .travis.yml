@@ -4,15 +4,14 @@ before_install:
 - curl -L https://github.com/docker/compose/releases/download/1.20.1/docker-compose-`uname
   -s`-`uname -m` > docker-compose
 - chmod +x docker-compose
-- sudo mv docker-compse /usr/local/bin
+- sudo mv docker-compose /usr/local/bin
 - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 install:
 - mvn install -Dmaven.javadoc.skip=true -B -V
 - ls -l
-- docker build --build-arg JAR_FILE=/target/backend.jar -t $DOCKERUSERNAME/se234-lab10-backend
-  .
-- docker push dto80/se234-lab10-backend
-- docker pull dto80/se234-lab10-client
+- docker build --build-arg JAR_FILE=/target/backend.jar -t $DOCKERUSERNAME/se234-lab10-backend .
+- docker push Eisgk/se234-lab10-backend
+- docker pull Eisgk/se234-lab10-client
 script:
 - docker-compose -H "$DOCKER_HOST" up -d
 cache:
