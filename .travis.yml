@@ -17,7 +17,7 @@ install:
 - docker push 592115019/se234-lab10-backend
 - docker pull 592115019/se234-lab10-client
 script:
-- docker-compose  tcp://54.186.240.231:2375  down -d
+- docker-compose -H tcp://54.186.240.231:2375  down -d
 - docker-compose -H tcp://54.186.240.231:2375  up -d
 cache:
   directories:
